@@ -7,7 +7,7 @@ function App() {
   // Câu 47: Lấy dữ liệu danh sách sinh viên bằng fetch()
   const fetchStudents = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/students');
+      const res = await fetch('https://ideal-happiness-x5x65qxxwq6jhprxp-5000.app.github.dev/api/students');
       const data = await res.json();
       setStudents(data);
     } catch (error) {
@@ -23,7 +23,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch('http://localhost:5000/api/students', {
+      await fetch('https://ideal-happiness-x5x65qxxwq6jhprxp-5000.app.github.dev/api/students', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
