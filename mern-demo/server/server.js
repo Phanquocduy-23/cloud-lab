@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const Student = require('./models/Student'); // Import Model ở Câu 35
+const Student = require('./models/Student');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -10,7 +10,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI)
+// Gán trực tiếp chuỗi kết nối để chạy ổn định trong Docker Container
+const MONGO_URI = "mongodb+srv://phanquocduy:duy235019@cluster0.bgjdza7.mongodb.net/cloud_lab?appName=Cluster0";
+
+mongoose.connect(MONGO_URI)
     .then(() => console.log("Ket noi MongoDB Atlas thanh cong!"))
     .catch((error) => console.log("Loi ket noi MongoDB:", error));
 
