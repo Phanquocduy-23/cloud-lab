@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-      <h2>Quản lý Sinh Viên</h2>
+      <h2>Quản lý Sinh Viên V2.0</h2>
       
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <input type="text" placeholder="MSSV" value={formData.studentId} onChange={(e) => setFormData({...formData, studentId: e.target.value})} required style={{ marginRight: '10px' }} />
